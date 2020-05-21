@@ -105,4 +105,8 @@ export class CategoryService extends CategoryHelpers{
             }         
         });
     } 
+    public async getCat(req: Request, res: Response){
+        const category: any = await super.GetCategory({_id: req.params.id})
+        res.status(200).json(category);
+    }
 }

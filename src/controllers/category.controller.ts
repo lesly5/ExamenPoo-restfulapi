@@ -9,12 +9,14 @@ export class CategoryController{
     }
     private routes(){
         this.app.route("/categories").get(this.category_service.getAll);
+        this.app.route("/category/languages/:id").get(this.category_service.getLanCatExam);
+
         this.app.route("/categories/languages").get(this.category_service.getAllWLanguage);
         this.app.route("/category").post(this.category_service.NewOne);
         
         this.app.route("/category/:id")
         .delete(this.category_service.deleteOne)
-        .get(this.category_service.getLanCatExam);
+        .get(this.category_service.getCat);
         
     }
 }
